@@ -38,15 +38,5 @@ namespace Cliente.Views
             ((ClienteViewModel)this.DataContext).PosX = (((ClienteViewModel)this.DataContext).Dibu.X) * .25;
         }
 
-        private void Slider_ValueChanged_2(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            (((ClienteViewModel)this.DataContext).MaxY) = 1132 - (((ClienteViewModel)this.DataContext).Dibu.Alto);
-        }
-
-        private void Slider_ValueChanged_3(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            (((ClienteViewModel)this.DataContext).MaxY) = 1132 - (((ClienteViewModel)this.DataContext).Dibu.Alto);
-
-        }
     }
 }

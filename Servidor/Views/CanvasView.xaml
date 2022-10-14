@@ -5,20 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Servidor.Views"
         xmlns:vm="clr-namespace:Servidor.ViewModels"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="CanvasView" Height="900" Width="1200"
+        Title="CanvasView" Height="1000" Width="1350"
         Loaded="Window_Loaded" Closed="Window_Closed">
-    
+    <Window.Background>
+        <ImageBrush ImageSource="/Assets/yoshi.png"></ImageBrush>
+    </Window.Background>
     <Window.DataContext>
         <vm:ServidorViewModel></vm:ServidorViewModel>
     </Window.DataContext>
     <Grid>
-        <Image Source="/Assets/yoshi.png"></Image>
+        <Image gif:ImageBehavior.AnimatedSource="/Assets/2.gif" Height="100" 
+               VerticalAlignment="Top" HorizontalAlignment="Left"></Image>
         <ItemsControl ItemsSource="{Binding RecList}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas Height="780" Width="1132" ClipToBounds="True"
-                    Background="white">
+                    Background="white" Opacity=".5">
                     </Canvas>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
@@ -39,6 +43,6 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+
     </Grid>
-   
 </Window>
