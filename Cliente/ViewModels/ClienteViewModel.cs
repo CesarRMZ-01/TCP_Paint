@@ -131,6 +131,31 @@ namespace Cliente.ViewModels
             }
         }
 
+        private double? maxX = 0;
+
+        public double? MaxX
+        {
+            get { return maxX; }
+            set
+            {
+                maxX = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
+
+            }
+        }
+        private double? maxY = 0;
+
+        public double? MaxY
+        {
+            get { return maxY; }
+            set
+            {
+                maxY = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
+
+            }
+        }
+
         private string myVar;
 
         public string MyProperty

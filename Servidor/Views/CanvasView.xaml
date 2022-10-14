@@ -6,34 +6,39 @@
         xmlns:local="clr-namespace:Servidor.Views"
         xmlns:vm="clr-namespace:Servidor.ViewModels"
         mc:Ignorable="d"
-        Title="CanvasView" Height="450" Width="800"
-        Loaded="Window_Loaded" Closed="Window_Closed" Background="#F8F878">
+        Title="CanvasView" Height="900" Width="1200"
+        Loaded="Window_Loaded" Closed="Window_Closed">
+    
     <Window.DataContext>
         <vm:ServidorViewModel></vm:ServidorViewModel>
     </Window.DataContext>
-    <ItemsControl ItemsSource="{Binding RecList}">
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <Canvas ClipToBounds="True"
-                    Background="white" Margin="10 10 10 10">
-                </Canvas>
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-        <ItemsControl.ItemContainerStyle>
-            <Style TargetType="ContentPresenter">
-                <Setter Property="Canvas.Left" Value="{Binding X}">
-                </Setter>
-                <Setter Property="Canvas.Top" Value="{Binding Y}"></Setter>
-            </Style>
-        </ItemsControl.ItemContainerStyle>
+    <Grid>
+        <Image Source="/Assets/yoshi.png"></Image>
+        <ItemsControl ItemsSource="{Binding RecList}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Height="780" Width="1132" ClipToBounds="True"
+                    Background="white">
+                    </Canvas>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Canvas.Left" Value="{Binding X}">
+                    </Setter>
+                    <Setter Property="Canvas.Top" Value="{Binding Y}"></Setter>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
 
-        
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>
-                <Rectangle Width="{Binding Ancho}"
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Rectangle Width="{Binding Ancho}"
                                Height="{Binding Alto}"
                                Fill="{Binding Color}"></Rectangle>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+   
 </Window>
