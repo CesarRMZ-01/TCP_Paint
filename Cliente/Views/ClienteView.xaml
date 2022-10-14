@@ -1,0 +1,214 @@
+﻿<Window x:Class="Cliente.Views.ClienteView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cliente.Views"
+        xmlns:vm="clr-namespace:Cliente.ViewModels" 
+        xmlns:color="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="ClienteView" Height="600" Width="700" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:ClienteViewModel></vm:ClienteViewModel>
+    </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="/Assets/Scores.png" Stretch="Fill"></ImageBrush>
+    </Window.Background>
+    <Grid Margin="0 13 0 -13">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".20*"></RowDefinition>
+            <RowDefinition Height=".50*"></RowDefinition>
+            <RowDefinition Height=".30*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"  Grid.ColumnSpan="2">
+            <Label Margin="40,20,10,10" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Grid.ColumnSpan="2" FontSize="30" 
+                   Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island">
+                Servidor :</Label>
+            <Border Grid.Column="2" 
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                    BorderThickness="0 0 0 3" BorderBrush="white">
+                <TextBox Height="30" Width="100" Margin="0 0 0 0" FontFamily="/Fonts/#SMW2: Yoshi's Island"
+                         FontSize="30" Foreground="white"
+                         IsEnabled="{Binding Desconectado}"
+                         Background="Transparent" BorderThickness="0"
+                         Text="{Binding IP}"></TextBox>
+            </Border>
+            <Button Height="50" Padding="5" FontFamily="/Fonts/#SMW2: Yoshi's Island"
+                         FontSize="25" Margin="10" Foreground="#F8F878"
+                         Background="Transparent" Visibility="{Binding EnviarIPState}" 
+                    BorderThickness="2" BorderBrush="#F8F878"
+                    Command="{Binding EnviarIPCommand}"
+                    Cursor="Hand">Conectar con Servidor</Button>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="5" Margin="30 0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0*"></ColumnDefinition>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/Cuadrado_Alto.png" HorizontalAlignment="Left" Grid.ColumnSpan="2" Width="136"></Image>
+                <Slider Style="{DynamicResource SliderStyle1}" 
+                        Orientation="Vertical"
+                        HorizontalAlignment="Right"
+                        Margin="0,10,31,10"
+                        Value="{Binding Dibu.Alto}"
+                        Minimum="0" Maximum="800" Grid.Column="1"></Slider>
+                <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Grid.ColumnSpan="2" Grid.Column="1" Margin="0 0 20 0">
+                    <Label Foreground="White" FontSize="15"
+                           FontFamily="/Fonts/#SMW2: Yoshi's Island">
+                        Altura
+                    </Label>
+                    <Label Margin="0 -10" Content="{Binding Dibu.Alto}" HorizontalAlignment="Center"
+                       Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"
+                           FontSize="15"></Label>
+                </StackPanel>
+
+
+                <Image Source="/Assets/Cuadrado_Y.png" Grid.Column="2" 
+                       HorizontalAlignment="Left" Width="136"></Image>
+                <Slider ValueChanged="Slider_ValueChanged"
+                        Grid.Column="2" Style="{DynamicResource SliderStyle1}" 
+                        IsDirectionReversed="True"
+                        Orientation="Vertical" HorizontalAlignment="Right"
+                        Margin="0,10,31,10"
+                        Value="{Binding Dibu.Y}"
+                        Minimum="0" Maximum="800"></Slider>
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center"
+                            Grid.Column="2" Margin="0 0 -8 0" Width="40">
+                    <Label Padding="0" FontSize="15" Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island">
+                        Pos Y
+                    </Label>
+                    <Label Margin="0 -5" FontSize="15" Content="{Binding Dibu.Y}" HorizontalAlignment="Center"
+                       Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"></Label>
+                </StackPanel>
+            </Grid>
+
+
+
+            <Grid Grid.Column="0" Grid.Row="1" Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Assets/Cuadrado_Ancho.png" HorizontalAlignment="Left"
+                       Margin="5 0 0 0"></Image>
+                <Slider ValueChanged="Slider_ValueChanged_1"
+                        Style="{DynamicResource SliderStyle1}"
+                        VerticalAlignment="Top"
+                        Margin="15 42 30 0"
+                        Value="{Binding Dibu.Ancho}"
+                        Minimum="0" Maximum="800"></Slider>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"
+                            Margin="0 0 12 0">
+                    <Label FontSize="15" Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island">
+                        Anchura
+                    </Label>
+                    <Label FontSize="15" Content="{Binding Dibu.Ancho}" HorizontalAlignment="Center"
+                       Foreground="White"
+                           Margin="0 -10" FontFamily="/Fonts/#SMW2: Yoshi's Island"></Label>
+                </StackPanel>
+
+
+                <Image Source="/Assets/Cuadrado_X.png" Grid.Column="1"
+                       HorizontalAlignment="Left"></Image>
+                <Slider Grid.Column="1" Style="{DynamicResource SliderStyle1}" 
+                        VerticalAlignment="Top" ValueChanged="Slider_ValueChanged_1"
+                        Margin="10 42 36 0"
+                        Value="{Binding Dibu.X}"
+                        Minimum="0" Maximum="800"></Slider>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top"
+                            Margin="0 0 12 0"
+                            Grid.Column="1">
+                    <Label Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"
+                           FontSize="15">
+                        Pos X
+                    </Label>
+                    <Label FontSize="15" Content="{Binding Dibu.X}" HorizontalAlignment="Center"
+                       Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"
+                           Margin="0 -10"></Label>
+                </StackPanel>
+            </Grid>
+
+            <DockPanel Grid.Column="1" Grid.RowSpan="2"
+                       Background="#F8F878" Margin="5 5 10 5">
+                <Border BorderBrush="black" BorderThickness="1" Margin="10 10 10 10">
+                    <Canvas ClipToBounds="True"
+                    Background="white">
+                        <Rectangle Width="{Binding Dibu.Ancho}" Height="{Binding Dibu.Alto}"
+                               Canvas.Left="{Binding PosX}" Canvas.Top="{Binding PosY}"
+                               Fill="{Binding Dibu.Color}">
+                            <Rectangle.RenderTransform>
+                                <ScaleTransform ScaleX=".6" ScaleY=".6"></ScaleTransform>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </Canvas>
+                </Border>
+                
+            </DockPanel>
+        </Grid>
+
+        <DockPanel Grid.Row="2" Margin="40 20 0 50">
+
+            <Border VerticalAlignment="Center" DockPanel.Dock="Left"
+                    BorderThickness="10" BorderBrush="{Binding Dibu.Color}" 
+                    Background="white">
+                <StackPanel>
+                    <TextBlock Margin="10 10 10 0" FontSize="20"
+                               FontFamily="/Fonts/#SMW2: Yoshi's Island"
+                               Foreground="{Binding Dibu.Color}">
+                    ¡Dale color a tu rectangulo!
+                    </TextBlock>
+                    <color:ColorPicker Height="25" Margin="10"
+                                       SelectedColor="{Binding Dibu.Color}"></color:ColorPicker>
+                </StackPanel>
+                
+                
+            </Border>
+        </DockPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2"
+                    Margin="0 20">
+            <Label 
+                Foreground="#FF1A1F"
+                FontFamily="/Fonts/#SMW2: Yoshi's Island" 
+                FontSize="20" Margin="0 0 0 10"
+                Content="{Binding Error}"></Label>
+            <Button 
+                Command="{Binding EnviarCommand}"
+                Height="40" Width="150" 
+                FontFamily="/Fonts/#SMW2: Yoshi's Island" FontSize="30"
+                VerticalAlignment="Center" Margin="0 0 0 0" Visibility="{Binding EnviarBTNState}"
+                Foreground="black" BorderBrush="Black" BorderThickness="2"
+                >ENVIAR
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#F7F472" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            
+        </StackPanel>
+        
+    </Grid>
+</Window>
