@@ -16,13 +16,13 @@
         <vm:ServidorViewModel></vm:ServidorViewModel>
     </Window.DataContext>
     <Grid>
-        <Image gif:ImageBehavior.AnimatedSource="/Assets/2.gif" Height="100" 
-               VerticalAlignment="Top" HorizontalAlignment="Left"></Image>
+        <!--<Image gif:ImageBehavior.AnimatedSource="/Assets/2.gif" Height="100" 
+               VerticalAlignment="Top" HorizontalAlignment="Left"></Image>-->
         <ItemsControl ItemsSource="{Binding RecList}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas Height="780" Width="1132" ClipToBounds="True"
-                    Background="white" Opacity=".5">
+                    Background="white">
                     </Canvas>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>

@@ -13,14 +13,7 @@
     <None Remove="Assets\Cuadrado_X.png" />
     <None Remove="Assets\Cuadrado_Y.png" />
     <None Remove="Assets\Scores.png" />
-    <None Remove="Assets\yoshi.png" />
     <None Remove="Fonts\SMW2-Yoshis-Island.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Assets\yoshi.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>
