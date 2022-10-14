@@ -189,7 +189,7 @@
         <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2"
                     Margin="0 20">
             <Label 
-                Foreground="#FF1A1F"
+                Foreground="#B88860"
                 FontFamily="/Fonts/#SMW2: Yoshi's Island" 
                 FontSize="20" Margin="0 0 0 10"
                 Content="{Binding Error}"></Label>
