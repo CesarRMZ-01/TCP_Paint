@@ -38,5 +38,13 @@ namespace Cliente.Views
             ((ClienteViewModel)this.DataContext).PosX = (((ClienteViewModel)this.DataContext).Dibu.X) * .25;
         }
 
+        private void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ((ClienteViewModel)this.DataContext).PosY = Mouse.GetPosition(Prev).Y;
+            ((ClienteViewModel)this.DataContext).PosX = Mouse.GetPosition(Prev).X;
+
+            ((ClienteViewModel)this.DataContext).Dibu.Y = Mouse.GetPosition(Prev).Y * 4;
+            ((ClienteViewModel)this.DataContext).Dibu.X = Mouse.GetPosition(Prev).X * 4;
+        }
     }
 }
