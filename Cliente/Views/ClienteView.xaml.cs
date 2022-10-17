@@ -27,24 +27,24 @@ namespace Cliente.Views
 
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
+        //private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        //{
 
-           ((ClienteViewModel)this.DataContext).PosY = (((ClienteViewModel)this.DataContext).Dibu.Y) * .25;
-        }
+        //   ((ClienteViewModel)this.DataContext).PosY = (((ClienteViewModel)this.DataContext).Dibu.Y) * .25;
+        //}
 
-        private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            ((ClienteViewModel)this.DataContext).PosX = (((ClienteViewModel)this.DataContext).Dibu.X) * .25;
-        }
+        //private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        //{
+        //    ((ClienteViewModel)this.DataContext).PosX = (((ClienteViewModel)this.DataContext).Dibu.X) * .25;
+        //}
 
         private void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ((ClienteViewModel)this.DataContext).PosY = Mouse.GetPosition(Prev).Y;
-            ((ClienteViewModel)this.DataContext).PosX = Mouse.GetPosition(Prev).X;
+            ((ClienteViewModel)this.DataContext).PosY = Mouse.GetPosition(Prev).Y - ((((ClienteViewModel)this.DataContext).Dibu.Alto / 2)*.25);
+            ((ClienteViewModel)this.DataContext).PosX = Mouse.GetPosition(Prev).X - ((((ClienteViewModel)this.DataContext).Dibu.Ancho /2)*.25);
 
-            ((ClienteViewModel)this.DataContext).Dibu.Y = Mouse.GetPosition(Prev).Y * 4;
-            ((ClienteViewModel)this.DataContext).Dibu.X = Mouse.GetPosition(Prev).X * 4;
+            ((ClienteViewModel)this.DataContext).Dibu.Y = (Mouse.GetPosition(Prev).Y - (((ClienteViewModel)this.DataContext).Dibu.Alto / 2)*.25) * 4;
+            ((ClienteViewModel)this.DataContext).Dibu.X = (Mouse.GetPosition(Prev).X - (((ClienteViewModel)this.DataContext).Dibu.Ancho / 2)*.25) * 4;
         }
     }
 }

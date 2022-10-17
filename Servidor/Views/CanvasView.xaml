@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:Servidor.ViewModels"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="CanvasView" Height="1000" Width="1350"
+        Title="CanvasView" Height="820" Width="1380"
         Loaded="Window_Loaded" Closed="Window_Closed">
     <Window.Background>
         <ImageBrush ImageSource="/Assets/yoshi.png"></ImageBrush>
@@ -21,7 +21,7 @@
         <ItemsControl ItemsSource="{Binding RecList}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <Canvas Height="780" Width="1132" ClipToBounds="True"
+                    <Canvas Height="720" Width="1280" ClipToBounds="True"
                     Background="white">
                     </Canvas>
                 </ItemsPanelTemplate>
