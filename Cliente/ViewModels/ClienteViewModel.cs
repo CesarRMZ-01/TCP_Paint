@@ -71,6 +71,17 @@ namespace Cliente.ViewModels
             }
         }
 
+        private string color;
+        public string Color
+        {
+            get { return color; }
+            set
+            {
+                color = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Color)));
+            }
+        }
+
         public ICommand EnviarCommand { get; set; }
         public ICommand EnviarIPCommand { get; set; }
 
@@ -91,6 +102,7 @@ namespace Cliente.ViewModels
             EnviarCommand = new RelayCommand(Enviar);
             EnviarIPCommand = new RelayCommand(EnviarIP);
 
+            Color = "#db2334";
             Desconectado = true;
             EnviarBTNState = "hidden";
             EnviarIPState = "visible";
@@ -195,7 +207,6 @@ namespace Cliente.ViewModels
                 Error = "Todo en orden. \n ¡Ya puedes enviar tu figura!";
             }
         }
-
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

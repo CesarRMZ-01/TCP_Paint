@@ -27,16 +27,6 @@ namespace Cliente.Views
 
         }
 
-        //private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        //{
-
-        //   ((ClienteViewModel)this.DataContext).PosY = (((ClienteViewModel)this.DataContext).Dibu.Y) * .25;
-        //}
-
-        //private void Slider_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
-        //{
-        //    ((ClienteViewModel)this.DataContext).PosX = (((ClienteViewModel)this.DataContext).Dibu.X) * .25;
-        //}
 
         private void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -45,6 +35,69 @@ namespace Cliente.Views
 
             ((ClienteViewModel)this.DataContext).Dibu.Y = (Mouse.GetPosition(Prev).Y - (((ClienteViewModel)this.DataContext).Dibu.Alto / 2)*.25) * 4;
             ((ClienteViewModel)this.DataContext).Dibu.X = (Mouse.GetPosition(Prev).X - (((ClienteViewModel)this.DataContext).Dibu.Ancho / 2)*.25) * 4;
+        }
+
+        private void RED_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            ((ClienteViewModel)this.DataContext).Dibu.Color = "#db2334";
+            ((ClienteViewModel)this.DataContext).Color = "#db2334";
+
+            RED.Margin = new Thickness(0, 0, 0, 15);
+            ORANGE.Margin = new Thickness(0, 0, 0, 0);
+            YELLOW.Margin = new Thickness(0, 0, 0, 0);
+            GREEN.Margin = new Thickness(0, 0, 0, 0);
+            BLUE.Margin = new Thickness(0, 0, 0, 0);
+
+        }
+
+        private void ORANGE_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ((ClienteViewModel)this.DataContext).Dibu.Color = "#ff9116";
+            ((ClienteViewModel)this.DataContext).Color = "#ff9116";
+
+            RED.Margin = new Thickness(0, 0, 0, 0);
+            ORANGE.Margin = new Thickness(0, 0, 0, 15);
+            YELLOW.Margin = new Thickness(0, 0, 0, 0);
+            GREEN.Margin = new Thickness(0, 0, 0, 0);
+            BLUE.Margin = new Thickness(0, 0, 0, 0);
+        }
+
+        private void YELLOW_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ((ClienteViewModel)this.DataContext).Dibu.Color = "#fbf236";
+            ((ClienteViewModel)this.DataContext).Color = "#fbf236";
+
+            RED.Margin = new Thickness(0, 0, 0, 0);
+            ORANGE.Margin = new Thickness(0, 0, 0, 0);
+            YELLOW.Margin = new Thickness(0, 0, 0, 15);
+            GREEN.Margin = new Thickness(0, 0, 0, 0);
+            BLUE.Margin = new Thickness(0, 0, 0, 0);
+        }
+
+        private void GREEN_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ((ClienteViewModel)this.DataContext).Dibu.Color = "#6abe30";
+            ((ClienteViewModel)this.DataContext).Color = "#6abe30";
+
+            RED.Margin = new Thickness(0, 0, 0, 0);
+            ORANGE.Margin = new Thickness(0, 0, 0, 0);
+            YELLOW.Margin = new Thickness(0, 0, 0, 0);
+            GREEN.Margin = new Thickness(0, 0, 0, 15);
+            BLUE.Margin = new Thickness(0, 0, 0, 0);
+
+        }
+
+        private void BLUE_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ((ClienteViewModel)this.DataContext).Dibu.Color = "#388aee";
+            ((ClienteViewModel)this.DataContext).Color = "#388aee";
+
+            RED.Margin = new Thickness(0, 0, 0, 0);
+            ORANGE.Margin = new Thickness(0, 0, 0, 0);
+            YELLOW.Margin = new Thickness(0, 0, 0, 0);
+            GREEN.Margin = new Thickness(0, 0, 0, 0);
+            BLUE.Margin = new Thickness(0, 0, 0, 15);
         }
     }
 }

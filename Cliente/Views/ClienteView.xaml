@@ -82,16 +82,7 @@
                        Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"
                            FontSize="15"></Label>
                 </StackPanel>
-
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"
-                            >
-                    <Label Padding="0" FontSize="15" Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island">
-                        Pos Y
-                    </Label>
-                    <Label Margin="0 -5" FontSize="15" Content="{Binding Dibu.Y}" HorizontalAlignment="Center"
-                       Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"></Label>
-                </StackPanel>
-            </Grid>
+                </Grid>
 
             <Grid Grid.Column="0" Grid.Row="1" Margin="0 10 0 0">
                 <Grid.ColumnDefinitions>
@@ -115,18 +106,6 @@
                     <Label FontSize="15" Content="{Binding Dibu.Ancho}" HorizontalAlignment="Center"
                        Foreground="White"
                            Margin="0 -10" FontFamily="/Fonts/#SMW2: Yoshi's Island"></Label>
-                </StackPanel>
-
-
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"
-                            >
-                    <Label Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"
-                           FontSize="15">
-                        Pos X
-                    </Label>
-                    <Label FontSize="15" Content="{Binding Dibu.X}" HorizontalAlignment="Center"
-                       Foreground="White" FontFamily="/Fonts/#SMW2: Yoshi's Island"
-                           Margin="0 -10"></Label>
                 </StackPanel>
             </Grid>
 
@@ -154,7 +133,7 @@
                             MouseLeftButtonDown="Canvas_MouseLeftButtonDown" Background="white">
                         <Rectangle Width="{Binding Dibu.Ancho}" Height="{Binding Dibu.Alto}"
                                Canvas.Left="{Binding PosX}" Canvas.Top="{Binding PosY}"
-                               Fill="{Binding Dibu.Color}">
+                               Fill="{Binding Color}">
                             <Rectangle.RenderTransform>
                                 <ScaleTransform ScaleX=".25" ScaleY=".25"></ScaleTransform>
                             </Rectangle.RenderTransform>
@@ -165,25 +144,42 @@
             </DockPanel>
         </Grid>
 
-        <DockPanel Grid.Row="2" Margin="40 20 0 50">
+        <Border Grid.RowSpan="3" Margin="40 20 0 50" VerticalAlignment="Bottom">
+            <StackPanel
+                        Orientation="Horizontal" HorizontalAlignment="Center">
 
-            <Border VerticalAlignment="Center" DockPanel.Dock="Left"
-                    BorderThickness="10" BorderBrush="{Binding Dibu.Color}" 
-                    Background="white">
-                <StackPanel>
-                    <TextBlock Margin="10 10 10 0" FontSize="20"
-                               FontFamily="/Fonts/#SMW2: Yoshi's Island"
-                               Foreground="{Binding Dibu.Color}">
-                    ¡Dale color a tu rectangulo!
-                    </TextBlock>
-                    <color:ColorPicker Height="25" Margin="10" Cursor="Hand"
-                                       SelectedColor="{Binding Dibu.Color}"></color:ColorPicker>
-                </StackPanel>
+                <Image Source="/Assets/Colors/RED.png"
+                                Stretch="Uniform" 
+                x:Name="RED" Width="50" Height="99" 
+                    Cursor="Hand" MouseLeftButtonDown="RED_MouseLeftButtonDown">
+                </Image>
+                <Image Source="/Assets/Colors/ORANGE.png"
+                                Stretch="Uniform"
+                    x:Name="ORANGE" Width="50" Height="99" 
+                    Cursor="Hand" MouseLeftButtonDown="ORANGE_MouseLeftButtonDown">
+                </Image>
+                <Image Source="/Assets/Colors/YELLOW.png"
+                                Stretch="Uniform"
+                    x:Name="YELLOW" Width="50" Height="99" 
+                    Cursor="Hand" MouseLeftButtonDown="YELLOW_MouseLeftButtonDown">
+                </Image>
+                <Image Source="/Assets/Colors/GREEN.png"
+                                Stretch="Uniform"
+                    x:Name="GREEN" Width="50" Height="99" 
+                    Cursor="Hand" MouseLeftButtonDown="GREEN_MouseLeftButtonDown">
+                </Image>
+                <Image Source="/Assets/Colors/BLUE.png"
+                                Stretch="Uniform"
+                    x:Name="BLUE" Width="50" Height="99" 
+                    Cursor="Hand" MouseLeftButtonDown="BLUE_MouseLeftButtonDown">
+                </Image>
 
+            </StackPanel>
 
-            </Border>
-        </DockPanel>
-
+        </Border>
+        <Border Grid.RowSpan="3" Margin="40 20 0 50" VerticalAlignment="Bottom"
+                BorderBrush="#b88860" BorderThickness="0 0 0 15"></Border>
+        
         <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2"
                     Margin="0 20">
             <Label 

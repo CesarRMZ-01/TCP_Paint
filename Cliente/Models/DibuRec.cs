@@ -13,7 +13,7 @@ namespace Servidor.Models
         public int? Alto { get; set; } = 50;
         public double? X { get; set; } = 0;
         public double? Y { get; set; } = 0;
-        public string? Color { get; set; } = "#9BADB7";
+        public string? Color { get; set; } = "#db2334";
 
     }
 }

@@ -8,15 +8,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Colors\BLUE.png" />
+    <None Remove="Assets\Colors\GREEN.png" />
+    <None Remove="Assets\Colors\ORANGE.png" />
+    <None Remove="Assets\Colors\RED.png" />
+    <None Remove="Assets\Colors\YELLOW.png" />
     <None Remove="Assets\Cuadrado_Alto.png" />
     <None Remove="Assets\Cuadrado_Ancho.png" />
-    <None Remove="Assets\Cuadrado_X.png" />
-    <None Remove="Assets\Cuadrado_Y.png" />
     <None Remove="Assets\Scores.png" />
     <None Remove="Fonts\SMW2-Yoshis-Island.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Colors\BLUE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Colors\GREEN.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Colors\ORANGE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Colors\RED.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Colors\YELLOW.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Scores.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -27,12 +45,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Cuadrado_Ancho.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Cuadrado_X.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Cuadrado_Y.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Fonts\SMW2-Yoshis-Island.ttf">
